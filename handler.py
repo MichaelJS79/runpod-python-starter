@@ -1,15 +1,14 @@
-import runpod
+import runpod  
 
-def handler(job):
-    """
-    job is a dict like:
-      {
-        "id": "...",
-        "input": { ... your JSON payload ... }
-      }
-    """
-    data = job.get("input", {})
-    return {"status": "ok", "echo": data}
+def process_data(input_data):
+    
+    return {"status": "ok", "echo": input_data}
+
+def handler(event):
+   
+    input_data = event.get("input", {})
+    result = process_data(input_data)
+    return result
 
 
 runpod.serverless.start({"handler": handler})
