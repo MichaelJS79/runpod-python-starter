@@ -1,5 +1,8 @@
-FROM runpod/base:0.4.0-cuda12.1.105-cudnn8-ubuntu20.04
-COPY requirements.txt /requirements.txt
-RUN pip install -r /requirements.txt
-COPY handler.py /handler.py
+FROM runpod/serverless:gpu
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
 CMD ["python", "-u", "handler.py"]
