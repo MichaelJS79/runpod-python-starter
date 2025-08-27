@@ -1,7 +1,7 @@
 {
   "version": "1",
   "image": "Dockerfile",
-  "entrypoint": "handler.handler",
+  "command": "python -u handler.py",
   "readme": "README.md",
   "gpu": true
 }
