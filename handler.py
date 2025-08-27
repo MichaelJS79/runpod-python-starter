@@ -11,5 +11,5 @@ def handler(job):
     data = job.get("input", {})
     return {"status": "ok", "echo": data}
 
-# Start the RunPod serverless handler loop
+
 runpod.serverless.start({"handler": handler})
