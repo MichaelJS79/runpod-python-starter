@@ -1,0 +1,7 @@
+{
+  "version": "1",
+  "image": "Dockerfile",
+  "entrypoint": "handler.handler",
+  "readme": "README.md",
+  "gpu": true
+}
