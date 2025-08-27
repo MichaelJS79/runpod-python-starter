@@ -1,0 +1,6 @@
+{
+  "basic_echo": {
+    "input": { "ping": "hello" },
+    "timeout": 30
+  }
+}
