@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 
 app = FastAPI()
 
@@ -7,7 +7,6 @@ def health():
     return {"status": "ok"}
 
 @app.post("/")
-async def root(payload: dict):
-    
-    input_data = payload.get("input", {})
-    return {"status": "ok", "echo": input_data}
+def root(payload: dict):
+   
+    return {"status": "ok", "echo": payload.get("input", {})}
